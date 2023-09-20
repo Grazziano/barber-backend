@@ -13,6 +13,7 @@ import { CountHaircutsController } from './controllers/haircut/CountHaircutsCont
 import { DetailHaircutController } from './controllers/haircut/DetailHaircutController';
 
 import { NewScheduleController } from './controllers/schedule/NewScheduleController';
+import { ListScheduleController } from './controllers/schedule/ListScheduleController';
 
 import { isAuthenticated } from './middlewares/isAuthenticated';
 
@@ -34,5 +35,6 @@ router.get('/haircut/detail', isAuthenticated, new DetailHaircutController().han
 
 // ROTAS SCHEDULE / SERVIÇOS
 router.post('/schedule', isAuthenticated, new NewScheduleController().handle);
+router.get('/schedule', isAuthenticated, new ListScheduleController().handle);
 
 export { router };
